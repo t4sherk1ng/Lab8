@@ -1,6 +1,6 @@
 public class Icosahedron {
 
-    private int edge;
+    private final int edge;
 
     Icosahedron(int edge) {
         this.edge = Math.abs(edge);
