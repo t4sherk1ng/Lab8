@@ -2,31 +2,39 @@ public class Goat {
 
     private String name;
     private String gender;
-    private Integer age;
+    private int age;
 
-    public Goat(String name, String gender, Integer age) throws Exception {
+    public Goat(String name, String gender, int age) throws Exception {
         this.setName(name);
         this.setGender(gender);
         this.setAge(age);
     }
 
     private void setName(String name) throws Exception {
-        if (name.length() > 3) {
-            this.name = name;
+        if (name != null) {
+            if (name.length() > 3) {
+                this.name = name;
+            } else {
+                throw new Exception("Имя короче 3 символов");
+            }
         } else {
-            throw new Exception("Имя короче 3 символов");
+            throw new Exception("Name cant be null");
         }
     }
 
     private void setGender(String gender) throws Exception {
-        if (gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female")) {
-            this.gender = gender;
+        if (gender != null) {
+            if (gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female")) {
+                this.gender = gender;
+            } else {
+                throw new Exception("Неверный пол");
+            }
         } else {
-            throw new Exception("Неверный пол");
+            throw new Exception("Gender cant be null");
         }
     }
 
-    private void setAge(Integer age) throws Exception {
+    private void setAge(int age) throws Exception {
         if (age >= 0) {
             this.age = age;
         } else {

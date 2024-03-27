@@ -7,7 +7,7 @@ public class Icosahedron {
     }
 
     public int getFacesArea() {
-        return (int) Math.round(Math.sqrt(edge * 3 / 2 * Math.pow((edge * 3 / 2 - edge), 3)));
+        return (int) Math.round(Math.sqrt(edge * 3 / 2 * Math.pow((edge * 3 / 2 - edge), 3))); //формула Герона
     }
 
     public int getArea() {

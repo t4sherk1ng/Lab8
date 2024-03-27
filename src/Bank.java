@@ -29,9 +29,14 @@ public class Bank {
     }
 
     public static void create() {
-        accounts[bankCount] = new BankAccount();
-        bankCount++;
-        System.out.println("Account ID" + bankCount + " created");
+        if (bankCount <= 100) {
+            accounts[bankCount] = new BankAccount();
+            bankCount++;
+            System.out.println("Account ID" + bankCount + " created");
+        }
+        else {
+            System.out.println("No more space");
+        }
     }
 
     public static void setInterest(int interest) {
